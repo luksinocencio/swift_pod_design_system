@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                   Esse repositório tem como objetivo ser o core de design e componentes do app Reminder, a fim de manter uma identidade visual única e consistente em todas as telas e funcionalidades do aplicativo. O CoreFramework inclui uma variedade de elementos de interface do usuário, como botões, cores, tipografia, ícones e layouts, todos projetados para garantir uma experiência de usuário coesa e agradável.
+                   Esse repositório tem como objetivo ser o core de design e componentes do app Reminder, a fim de manter uma identidade visual única e consistente em todas as telas e funcionalidades do aplicativo.
                    DESC
 
   # spec.description  = "A longer description of CoreFramework in Markdown format."
@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { type => 'MIT', :file => 'LICENSE' }
+  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -66,7 +66,9 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
+  spec.platform     = :ios, "12,0"
+  spec.ios.deployment_target = "12.0"
+
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -83,7 +85,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/CoreFramework.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/luksinocencio/swift_pod_design_system.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
