@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
 
   # spec.description  = "A longer description of CoreFramework in Markdown format."
 
-  spec.homepage     = "https://github.com/luksinocencio/swift_trilha_ios_rocketseat/"
+  spec.homepage     = "https://github.com/luksinocencio/swift_pod_design_system"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
