@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                   Esse repositório tem como objetivo ser o core de design e componentes do app Reminder.
+                   Objetivo ser o core de design e componentes do app Reminder (estudos)
                    DESC
 
   # spec.description  = "A longer description of CoreFramework in Markdown format."
