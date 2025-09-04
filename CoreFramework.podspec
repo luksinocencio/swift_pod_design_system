@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                  = "CoreFramework"
-  spec.version               = "0.0.1"
+  spec.version               = "0.0.2"
   spec.summary               = "CoreFramework foi desenvolvido para o app Reminder como core de design e de componentes a serem utilizados pela equipe ReminderTeam."
 
   spec.description           = <<-DESC
@@ -15,6 +15,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "12.0"
   spec.source                = { :git => "https://github.com/luksinocencio/swift_pod_design_system.git", :tag => "#{spec.version}" }
   spec.source_files          = "CoreFramework/Sources/**/*.{swift,h}"
+  spec.frameworks          = "UIKit"
   spec.exclude_files         = "Classes/Exclude"
   
 end
