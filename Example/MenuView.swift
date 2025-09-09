@@ -13,6 +13,19 @@ class MenuView: UIView {
         return label
     }()
     
+    private let checkbox = ToggleCheckbox()
+    
+    private let testCheckboxButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Test checkbox", for: .normal)
+        button.layer.cornerRadius = Metrics.medium
+        button.backgroundColor = .red
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(didTapCheckboxButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private let onboardingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Onboarding", for: .normal)
@@ -36,6 +49,7 @@ class MenuView: UIView {
     private func setupUI() {
         addSubview(titleLabel)
         addSubview(onboardingButton)
+        addSubview(testCheckboxButton)
         setupConstraints()
     }
     
@@ -48,11 +62,25 @@ class MenuView: UIView {
             onboardingButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             onboardingButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             onboardingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
-            onboardingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium)
+            onboardingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
+            
+            testCheckboxButton.topAnchor.constraint(equalTo: onboardingButton.bottomAnchor, constant: Metrics.medium),
+            testCheckboxButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
+            testCheckboxButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
+            testCheckboxButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
         ])
     }
     
-    @objc private func didTapOnboardingButton() {
+    @objc
+    private func didTapOnboardingButton() {
         didTapOnboarding?()
+    }
+    
+    @objc
+    private func didTapCheckboxButton() {
+        let checkBoxViewController = CheckboxViewController()
+        if let parentViewController = self.window?.rootViewController {
+            parentViewController.present(checkBoxViewController, animated: true)
+        }
     }
 }
