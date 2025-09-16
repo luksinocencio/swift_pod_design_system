@@ -1,10 +1,10 @@
 import UIKit
 
-protocol CustomButtonDelegate: AnyObject {
+public protocol CustomButtonDelegate: AnyObject {
     func buttonAction()
 }
 
-class CustomButton: UIButton {
+public class CustomButton: UIButton {
     weak var delegate: CustomButtonDelegate?
     
     // MARK: - Private property(ies).
@@ -12,7 +12,7 @@ class CustomButton: UIButton {
     private var customWidth: CFloat?
     
     // MARK: - init(s).
-    init(title: String, backgroundColor: UIColor = Colors.primaryRedBase) {
+    public init(title: String, backgroundColor: UIColor = Colors.primaryRedBase) {
         super.init(frame: .zero)
         setupButton(
             title: title,
@@ -22,7 +22,7 @@ class CustomButton: UIButton {
         )
     }
     
-    init(title: String, icon: UIImage, iconPosition: NSLayoutConstraint.Axis, backgroundColor: UIColor = Colors.primaryRedBase) {
+    public init(title: String, icon: UIImage, iconPosition: NSLayoutConstraint.Axis, backgroundColor: UIColor = Colors.primaryRedBase) {
         super.init(frame: .zero)
         setupButton(
             title: title,
