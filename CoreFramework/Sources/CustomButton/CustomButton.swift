@@ -5,7 +5,7 @@ public protocol CustomButtonDelegate: AnyObject {
 }
 
 public class CustomButton: UIButton {
-    weak var delegate: CustomButtonDelegate?
+    public weak var delegate: CustomButtonDelegate?
     
     // MARK: - Private property(ies).
     private var iconPosition: NSLayoutConstraint.Axis?
